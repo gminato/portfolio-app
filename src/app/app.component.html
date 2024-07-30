@@ -1,8 +1,55 @@
 <div class="layout">
-  <div>
-    
-  </div>
+  
   <div class="card-design">
+    <!-- Home Card-->
+    <div *ngIf="chosenLink == 'home'">
+
+    </div>
+    <!--About Card-->
+    <div *ngIf="chosenLink == 'about'">
+
+    </div>
+    <!-- Project Card-->
+    <div *ngIf="chosenLink == 'project'">
+
+    </div>
+    <!-- Contact Card-->
+    <div  *ngIf="chosenLink == 'contact'" style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: space-around;">
+      
+    <div class="contact-me-card ">
+      <div style="font-size: large;font-weight: bold;margin-top: 0.5rem;color:#015CBA">Reach Out to Me</div>
+      <mat-form-field focus appearance="outline" class="example-form-field" style="width: 80%;margin:2rem 0 0 0.5rem">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [(ngModel)]="name">
+        @if (name) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-form-field" style="width: 80%;margin:.5rem 0 0 .5rem">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email">
+        @if (name) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width" style="width: 80%;margin:0.5 0">
+        <mat-label>Leave a message</mat-label>
+        <textarea matInput rows="5"></textarea>
+      </mat-form-field>
+      
+      <button mat-stroked-button style="width: 80%;">Submit</button>
+ 
+    </div>
+      
+    </div>
+
+
+
 
   </div>
 
@@ -10,12 +57,8 @@
 
     <mat-button-toggle-group [(ngModel)] = "chosenLink"  >
       @for(item of toggleButtonArray;track item.value) {
-        <!-- {{chosenLink}} -->
        <mat-button-toggle [ngStyle]="{'background-color':item.value== chosenLink ?'#DAE2F9':'white'}" class = "toggle-button-cards" style="width: 12rem;" [value]="item.value">{{item.title}}</mat-button-toggle>
       }
-      <!-- <mat-button-toggle class = "toggle-button-cards" style="width:12rem;" value="project">Project</mat-button-toggle>
-      <mat-button-toggle class = "toggle-button-cards" style="width:12rem;" value="about">About</mat-button-toggle>
-      <mat-button-toggle class = "toggle-button-cards" style="width: 12rem;" value="contact">Contact</mat-button-toggle> -->
     </mat-button-toggle-group> 
   </p>
 </div>
