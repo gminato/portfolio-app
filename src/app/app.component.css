@@ -21,8 +21,8 @@
 }
 
 .contact-me-card {
-    height: 60%;
-    width: 25%;
+    padding: 0.5rem; 
+    width:50%;
     display: flex;
     align-items: center;
     justify-content:start;
@@ -37,4 +37,29 @@
 :host ::ng-deep .mdc-text-field--outlined {
     --mdc-outlined-text-field-container-shape: 28px;
   }
-  
+
+.icons {
+    color: #015CBA;
+    font-size:100px; 
+    margin-top: 3rem;
+}
+
+.socials-container .social-heading {
+    width:5rem;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    color:#015CBA ;
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 45rem;
+    row-gap: 2rem;
+    cursor: pointer;
+}
+
+.icons :hover {
+    transform: scale(1.2);
+}
